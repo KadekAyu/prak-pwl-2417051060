@@ -1,29 +1,69 @@
-@extends('layouts.app')
+@extends('layouts.template')
 
 @section('content')
 
-     <div>
-        <h1> Buat Pengguna Baru</h1>
-        <from action=""{{ route('user.store') }} method="POST">
+<div class="container">
+
+    <div class="form-container">
+
+        <h2>Tambah User</h2>
+
+        <form action="{{ route('user.store') }}" method="POST">
+
             @csrf
 
-            <label for="nama">Nama:</label><br>
-            <input type="text" id="nama" name="nama"><br><br>
-            
-            <label for="npm">NPM:</label><br>
-            <input type="text" id="npm" name="npm"><br><br>
+            <div class="form-group">
+                <label for="nama">Nama</label>
 
-            <label for="kelas">Kelas:</label><br>
-            <select name="kelas_id" id="kelas_id">
-                @foreach ($kelas as $kelasItem)
-                    <option value="{{ $kelasItem->id }}">{{ $kelasItem->nama_kelas }}</option>
-                @endforeach
-            </select><br><br>
+                <input
+                    type="text"
+                    id="nama"
+                    name="nama"
+                    placeholder="Masukkan nama"
+                    required>
+            </div>
 
-            <button type="submit">Submit</button>
+            <div class="form-group">
+                <label for="nim">NPM</label>
 
-        </from>
+                <input
+                    type="text"
+                    id="nim"
+                    name="nim"
+                    placeholder="Masukkan NPM"
+                    required>
+            </div>
 
-     </div>
+            <div class="form-group">
+                <label for="kelas_id">Kelas</label>
+
+                <select id="kelas_id" name="kelas_id" required>
+
+                    <option value="">Pilih Kelas</option>
+
+                    @foreach ($kelas as $k)
+
+                    <option value="{{ $k->id }}">
+                        {{ $k->nama_kelas }}
+                    </option>
+
+                    @endforeach
+
+                </select>
+            </div>
+
+            <button type="submit" class="btn">
+                Simpan User
+            </button>
+
+            <a href="/user" class="btn">
+                Kembali
+            </a>
+
+        </form>
+
+    </div>
+
+</div>
 
 @endsection

@@ -17,14 +17,27 @@ class UserController extends Controller
         $this->kelasModel = new Kelas();
     }
 
+    public function index()
+    {
+        $user = $this->userModel->getUser();
+
+        $data = [
+            'title' => 'Daftar User',
+            'user' => $user,
+        ];
+
+        return view('list_user', $data);
+    }
+
     public function create()
     {
-        $kelasModel = new Kelas();
         $kelas = $this->kelasModel->getKelas();
+
         $data = [
-            'title' => 'Create User',
+            'title' => 'Tambah User',
             'kelas' => $kelas,
         ];
+
         return view('create_user', $data);
     }
 
@@ -32,20 +45,10 @@ class UserController extends Controller
     {
         $this->userModel->create([
             'nama' => $request->input('nama'),
-            'nim' => $request->input('npm'),
+            'nim' => $request->input('nim'),
             'kelas_id' => $request->input('kelas_id'),
         ]);
 
         return redirect()->to('/user');
-    }
-
-    public function index()
-    {
-
-        $data = [
-            'title' => 'List User',
-            'users' => $this ->userModel->getUser(),
-        ];
-        return view('list_user', $data);
     }
 }
