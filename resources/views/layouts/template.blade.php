@@ -166,6 +166,64 @@
             background-color: #e94c7d;
         }
 
+        /* Action Button */
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .btn-edit {
+            background-color: #ffd6e4;
+            color: #c94f78;
+            padding: 7px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .btn-delete {
+            background-color: #ff5b8f;
+            color: white;
+            padding: 7px 14px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn-edit:hover {
+            background-color: #ffc4d8;
+        }
+
+        .btn-delete:hover {
+            background-color: #e94c7d;
+        }
+
+        /* Alert */
+        .alert-success,
+        .alert-error {
+            width: 450px;
+            margin: 0 auto 25px auto;
+            padding: 15px 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 14px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+        }
+
+        .alert-success {
+            background-color: #d9f2df;
+            color: #3f7d4c;
+            border: 1px solid #bce3c5;
+        }
+
+        .alert-error {
+            background-color: #f8d5dc;
+            color: #b94f63;
+            border: 1px solid #efb7c1;
+        }
+
         /* Footer */
         .footer {
             background-color: #ffd1df;
@@ -177,6 +235,43 @@
         .footer p {
             margin: 4px;
             font-size: 14px;
+        }
+
+        /* Form Action */
+        .form-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .btn-save,
+        .btn-cancel {
+            display: inline-block;
+            padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .btn-save {
+            background-color: #ff5b8f;
+            color: white;
+        }
+
+        .btn-save:hover {
+            background-color: #e94c7d;
+        }
+
+        .btn-cancel {
+            background-color: #ffd6e4;
+            color: #c94f78;
+        }
+
+        .btn-cancel:hover {
+            background-color: #ffc4d8;
         }
     </style>
 </head>
